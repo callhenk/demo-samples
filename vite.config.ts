@@ -19,6 +19,4 @@ export default defineConfig({
       external: ["dompurify", "canvg"],
     },
   },
-  publicDir: "public",
-  assetsInclude: ["**/*.html", "**/*.css", "**/*.js"],
 });
