@@ -13,7 +13,15 @@
         
 
         
-        
+        <script>
+            (function (d) {
+                var config = {
+                    kitId: 'cag1tem',
+                    scriptTimeout: 3000
+                },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = '//use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+            })(document);
+        </script>
 		<style>
 		.rch-emg-top-banner {
 		  background: #DA1A31;
@@ -1345,7 +1353,39 @@ window.fcWidget.on("widget:closed", function(resp) {
         </div>
     </div>
     <!-- end foundation news carousel -->
-    
+    <script type="text/javascript">
+        //Tracking codes for events on this page in the blogs.
+
+        function pagerEvent(a) {
+            try {
+                ga('rchTracker.send', 'event', 'InternetHomePage', 'click', 'NewsFeed pager click - ' + a);
+            }
+            catch (err) {
+                //Not on prod - no function defined
+            }
+        }
+
+        function blogClickEvent(a) {
+            try {
+                ga('rchTracker.send', 'event', 'InternetHomePage', 'click', 'NewsFeed click - ' + a);
+            }
+            catch (err) {
+                //Not on prod - no function defined
+            }
+        }
+
+        // Write in the onclick function hooks
+        $("#rch-news-carousel a").attr("onclick", "blogClickEvent('RCH News')");
+        $("#rch-news-carousel-xs a").attr("onclick", "blogClickEvent('RCH News')");
+        $("#fd-news-carousel a").attr("onclick", "blogClickEvent('Foundation News')");
+        $("a.jcarousel-control-prev").attr("onclick", "pagerEvent('RCH News')");
+        $("a.jcarousel-control-next").attr("onclick", "pagerEvent('RCH News')");
+        $("a.jcarousel-control-prev2").attr("onclick", "pagerEvent('Foundation News')");
+        $("a.jcarousel-control-next2").attr("onclick", "pagerEvent('Foundation News')");
+
+
+        
+    </script>
 
  
 
@@ -1443,7 +1483,14 @@ window.fcWidget.on("widget:closed", function(resp) {
                     </div>
                     <span class="breadcrumb hidden-xs">
                         
-                        <span id="ctl00_ctl00_rchFolderBreadCrumb"><a target="_self" href="www.rch.org.html" title="The Royal Children&amp;#39;s Hospital">RCH</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;The Royal Children's Hospital</span>
+                        <span id="ctl00_ctl00_rchFolderBreadCrumb"><a target="_self" href="www.rch.org.html" title="The Royal Children&amp;#39;s Hospital">RCH</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;The Royal Children's Hospital<script id="EktronScriptBlockaeoye" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+document.cookie ='ek_TimezoneOffset=' + new Date().getTimezoneOffset();
+});
+
+
+</script></span>
                     </span>
                 </div>
             </div>
@@ -1756,6 +1803,6 @@ function __doPostBack(eventTarget, eventArgument) {
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5G6KQC9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- End Google Tag Manager (noscript) -->
 
-    <script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&amp;ns=3&amp;cb=113949179" async=""></script>
+    
 
 </body></html>

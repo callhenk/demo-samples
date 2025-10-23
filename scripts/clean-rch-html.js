@@ -26,13 +26,8 @@ const BROKEN_PATTERNS = [
   { selector: 'script[src*="googletagmanager.com"]' },
   { selector: 'script[src*="google-analytics"]' },
   { selector: 'script[src*="incapsula"]' },
+  { selector: 'script[src*="_Incapsula_Resource"]' },
   { selector: 'script[src*="WebResource.axd"]' },
-
-  // Inline scripts that reference undefined global objects
-  {
-    selector: 'script',
-    contains: ['Typekit.load', 'Ektron', 'tk.onload', '$', 'jQuery']
-  }
 ];
 
 function cleanRCHHTML() {
@@ -58,19 +53,23 @@ function cleanRCHHTML() {
         });
       } else {
         // For external resources
-        const removed = $(pattern.selector).length;
-        $(pattern.selector).remove();
-        removedCount += removed;
+        const selected = $(pattern.selector);
+        removedCount += selected.length;
+        selected.remove();
       }
     });
 
-    // Remove all script tags that reference local js files (they're not loading properly in iframe)
-    $('script[src*="js/"]').remove();
-    removedCount += $('script[src*="js/"]').length;
-
     // Remove manifest.json reference (causing error)
-    $('link[href*="manifest.json"]').remove();
-    removedCount += 1;
+    const manifestLinks = $('link[href*="manifest.json"]');
+    if (manifestLinks.length) {
+      manifestLinks.remove();
+      removedCount += 1;
+    }
+
+    // Remove all script tags that reference local js files
+    const jsScripts = $('script[src*="js/"]');
+    removedCount += jsScripts.length;
+    jsScripts.remove();
 
     // Write the cleaned HTML back
     const cleanedHtml = $.html();
