@@ -21,15 +21,17 @@ const BROKEN_PATTERNS = [
   // External tracking/analytics that get blocked
   { selector: 'script[src*="typekit.net"]' },
   { selector: 'script[src*="clarity.ms"]' },
+  { selector: 'script[src*="clarity.js"]' },
   { selector: 'script[src*="hotjar.com"]' },
   { selector: 'script[src*="googletagmanager.com"]' },
   { selector: 'script[src*="google-analytics"]' },
   { selector: 'script[src*="incapsula"]' },
+  { selector: 'script[src*="WebResource.axd"]' },
 
   // Inline scripts that reference undefined global objects
   {
     selector: 'script',
-    contains: ['Typekit.load', 'Ektron', 'tk.onload']
+    contains: ['Typekit.load', 'Ektron', 'tk.onload', '$', 'jQuery']
   }
 ];
 
