@@ -5,11 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
+import ModernDemo from "./pages/ModernDemo";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import GDPR from "./pages/GDPR";
 import Cookies from "./pages/Cookies";
+import RCHOfficial from "./pages/RCHOfficial";
+import NewsDetail from "./pages/NewsDetail";
+import GuideDetail from "./pages/GuideDetail";
 // import BackgroundParallax from "./components/BackgroundParallax";
 
 const queryClient = new QueryClient();
@@ -25,6 +29,10 @@ const App = () => (
           {/* Parallax disabled for now */}
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/modern-demo" element={<ModernDemo />} />
+            <Route path="/rch-official" element={<RCHOfficial />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
+            <Route path="/guides/:id" element={<GuideDetail />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/gdpr" element={<GDPR />} />

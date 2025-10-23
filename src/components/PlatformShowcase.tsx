@@ -63,7 +63,7 @@ const PlatformShowcase = () => {
       <div className="container mx-auto px-6">
         <Reveal className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm text-gray-200 mb-6">
-            <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
             Platform Features
           </div>
           <h2 className="text-5xl font-display font-bold text-white mb-6">
@@ -110,7 +110,7 @@ const PlatformShowcase = () => {
                         delay: index * 0.25 + itemIndex * 0.12,
                       }}
                     >
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                       <span>{item}</span>
                     </motion.li>
                   ))}

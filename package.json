@@ -1,8 +1,8 @@
 {
-  "name": "henk-website",
+  "name": "rch-hospital-clone",
   "private": true,
   "version": "1.0.0",
-  "description": "Henk - AI voice agent that automates stewardship and fundraising calls for charities",
+  "description": "Royal Children's Hospital (RCH) homepage clone with integrated conversational AI agent",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -90,12 +90,6 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^4.5.5"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.40.1"
-  },
-  "overrides": {
-    "vite": {
-      "rollup": "npm:@rollup/wasm-node"
-    }
-  }
+  "optionalDependencies": {},
+  "overrides": {}
 }

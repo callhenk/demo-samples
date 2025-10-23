@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Heart, Phone, Users } from "lucide-react";
 
 const HeroSection = () => {
   const mediaRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +12,7 @@ const HeroSection = () => {
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
   return (
-    <section className="relative min-h-screen bg-gray-900/70 backdrop-blur-md overflow-hidden pt-16 lg:pt-0 lg:flex lg:items-center border-b border-white/10">
+    <section className="relative min-h-screen bg-gradient-to-b from-cyan-50 to-white overflow-hidden pt-16 lg:pt-0 lg:flex lg:items-center border-b border-cyan-100">
       <div className="container mx-auto px-6 relative z-10 pt-8 lg:pt-0">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -27,53 +28,71 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <div className="space-y-4">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm text-gray-100">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
-                  AI-Powered Voice Agent
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-100 backdrop-blur-sm text-sm text-cyan-700">
+                  <Heart className="w-4 h-4 mr-2 animate-pulse" fill="currentColor" />
+                  Australia's #1 Children's Hospital
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-white leading-tight tracking-tight">
-                  Henk is an AI voice agent that automates stewardship and
-                  fundraising calls for charities
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 leading-tight tracking-tight">
+                  Exceptional Care for Every Child
                 </h1>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  The Royal Children's Hospital Melbourne provides world-class
+                  pediatric care, innovative research, and compassionate support
+                  to children and families across Victoria.
+                </p>
               </div>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-6"
+                className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
               >
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-100 text-gray-900 font-semibold rounded-xl px-8 py-4 text-lg shadow-2xl hover:shadow-white/20 transform hover:scale-105 transition-all duration-300"
+                  className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl px-8 py-4 text-lg shadow-lg hover:shadow-cyan-200 transform hover:scale-105 transition-all duration-300"
                   onClick={() =>
                     window.open(
-                      "https://calendly.com/jerome-callhenk/30min",
+                      "https://www.rch.org.au/",
                       "_blank"
                     )
                   }
                 >
-                  💬 See Henk in Action
+                  <Phone className="w-5 h-5 mr-2" />
+                  Book an Appointment
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-cyan-600 text-cyan-600 hover:bg-cyan-50 font-semibold rounded-xl px-8 py-4 text-lg"
+                  onClick={() =>
+                    window.open(
+                      "https://www.rch.org.au/home/",
+                      "_blank"
+                    )
+                  }
+                >
+                  Learn More
                 </Button>
               </motion.div>
 
               <motion.div
-                className="flex items-center space-x-8 text-sm text-gray-300"
+                className="grid grid-cols-3 gap-4 pt-4"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>No setup fees</span>
+                <div className="flex flex-col items-start">
+                  <div className="text-2xl font-bold text-cyan-600">50+</div>
+                  <span className="text-sm text-gray-600">Medical Specialties</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>24/7 operations</span>
+                <div className="flex flex-col items-start">
+                  <div className="text-2xl font-bold text-cyan-600">1,000+</div>
+                  <span className="text-sm text-gray-600">Expert Staff</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>GDPR compliant</span>
+                <div className="flex flex-col items-start">
+                  <div className="text-2xl font-bold text-cyan-600">160+</div>
+                  <span className="text-sm text-gray-600">Years Legacy</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -88,46 +107,50 @@ const HeroSection = () => {
             <motion.div
               ref={mediaRef}
               style={{ y: yParallax }}
-              className="relative overflow-hidden rounded-2xl shadow-2xl border border-gray-200/20 will-change-transform"
+              className="relative overflow-hidden rounded-2xl shadow-2xl border border-cyan-200 will-change-transform bg-cyan-50"
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="relative aspect-video w-full">
-                <iframe
-                  src="https://drive.google.com/file/d/1NljA6FHKI1Bzb9F2MDB-Q9skfFpA1day/preview"
-                  frameBorder="0"
-                  allowFullScreen
-                  className="w-full h-full rounded-2xl"
-                  title="Henk Demo Video"
-                />
+              <div className="relative aspect-video w-full flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <Heart className="w-24 h-24 text-cyan-600 mx-auto" fill="currentColor" />
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      Welcome to RCH
+                    </h3>
+                    <p className="text-gray-600 mt-2">
+                      Dedicated to the health and wellbeing of children
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            {/* Floating elements to show platform features - hidden on mobile */}
+            {/* Floating elements */}
             <motion.div
-              className="hidden lg:block absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-200 z-10"
+              className="hidden lg:block absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-cyan-200 z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 1 }}
             >
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <Users className="w-5 h-5 text-green-500" />
                 <span className="text-sm font-medium text-gray-700">
-                  Live Calls
+                  Patient-Centered Care
                 </span>
               </div>
             </motion.div>
 
             <motion.div
-              className="hidden lg:block absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-xl border border-gray-200 z-10"
+              className="hidden lg:block absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-xl border border-cyan-200 z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 1.2 }}
             >
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <Heart className="w-5 h-5 text-red-500" />
                 <span className="text-sm font-medium text-gray-700">
-                  AI Agent
+                  World-Class Care
                 </span>
               </div>
             </motion.div>

@@ -17,9 +17,15 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
 
-    --primary: 220 13% 18%;
+    /* RCH Color Theme */
+    --primary: 201 100% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 13% 18%;
+    --primary-glow: 201 100% 40%;
+
+    /* RCH Secondary colors as accent palette */
+    --rch-accent-1: 47 97% 54%;
+    --rch-accent-2: 11 100% 54%;
+    --rch-accent-3: 83 100% 50%;
 
     --secondary: 0 0% 98%;
     --secondary-foreground: 220 13% 18%;
@@ -27,23 +33,23 @@ All colors MUST be HSL.
     --muted: 0 0% 98%;
     --muted-foreground: 220 13% 25%;
 
-    --accent: 220 13% 18%;
+    --accent: 47 97% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 220 13% 18%;
+    --border: 201 50% 90%;
+    --input: 201 50% 90%;
+    --ring: 201 100% 40%;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, #1a202c, #2d3748);
-    --gradient-hero: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    --gradient-subtle: linear-gradient(180deg, #fff 0%, #f7fafc 100%);
+    /* Custom design tokens with RCH colors */
+    --gradient-primary: linear-gradient(135deg, #008ccc, #0072a3);
+    --gradient-hero: linear-gradient(135deg, #008ccc 0%, #0072a3 100%);
+    --gradient-subtle: linear-gradient(180deg, #fff 0%, #f0f9ff 100%);
 
-    --shadow-elegant: 0 10px 40px -10px rgba(45, 55, 72, 0.25);
-    --shadow-glow: 0 0 40px rgba(45, 55, 72, 0.4);
+    --shadow-elegant: 0 10px 40px -10px rgba(0, 140, 204, 0.25);
+    --shadow-glow: 0 0 40px rgba(0, 140, 204, 0.4);
 
     --transition-smooth: all 0.12s ease-out;
 
@@ -53,17 +59,30 @@ All colors MUST be HSL.
 
     --sidebar-foreground: 220 13% 18%;
 
-    --sidebar-primary: 220 13% 18%;
+    --sidebar-primary: 201 100% 40%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 0 0% 98%;
+    --sidebar-accent: 47 97% 54%;
 
     --sidebar-accent-foreground: 220 13% 18%;
 
-    --sidebar-border: 220 13% 90%;
+    --sidebar-border: 201 50% 90%;
 
-    --sidebar-ring: 220 13% 18%;
+    --sidebar-ring: 201 100% 40%;
+
+    /* Hospital Theme Color Palette */
+    --hospital-blue-strong: 207 100% 36%;
+    --hospital-blue-bright: 197 100% 45%;
+    --hospital-orange: 17 95% 56%;
+    --hospital-yellow: 45 100% 51%;
+    --hospital-green: 90 52% 54%;
+    --hospital-olive-nav: 95 28% 40%;
+    --hospital-text-strong: 220 13% 15%;
+    --hospital-text-muted: 215 15% 35%;
+    --hospital-bg: 0 0% 100%;
+    --hospital-bg-soft: 216 33% 97%;
+    --hospital-border: 220 13% 91%;
   }
 
   .dark {
@@ -76,7 +95,8 @@ All colors MUST be HSL.
     --popover: 220 13% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 220 13% 18%;
+    /* RCH Color Theme for dark mode */
+    --primary: 201 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 13% 12%;
@@ -85,23 +105,23 @@ All colors MUST be HSL.
     --muted: 220 13% 12%;
     --muted-foreground: 220 13% 65%;
 
-    --accent: 220 13% 12%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 47 97% 64%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 15%;
-    --input: 220 13% 15%;
-    --ring: 220 13% 18%;
+    --border: 201 50% 25%;
+    --input: 201 50% 25%;
+    --ring: 201 100% 50%;
     --sidebar-background: 220 13% 8%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 220 13% 18%;
+    --sidebar-primary: 201 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 13% 12%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 13% 15%;
-    --sidebar-ring: 220 13% 18%;
+    --sidebar-accent: 47 97% 64%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 201 50% 25%;
+    --sidebar-ring: 201 100% 50%;
   }
 }
 

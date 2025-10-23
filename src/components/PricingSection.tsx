@@ -79,7 +79,7 @@ const PricingSection = () => {
       <div className="container mx-auto px-6">
         <Reveal className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 border border-gray-200 text-sm text-gray-700 mb-6">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
             Transparent Pricing
           </div>
           <h2 className="text-5xl font-display font-bold text-gray-900 mb-6">
@@ -140,7 +140,7 @@ const PricingSection = () => {
                     key={featureIndex}
                     className="flex items-start space-x-3"
                   >
-                    <Check className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{feature}</span>
                   </div>
                 ))}

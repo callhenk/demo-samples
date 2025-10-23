@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Lock, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -11,7 +10,7 @@ const CTASection = () => {
 
   return (
     <>
-      <section className="py-32 bg-gray-900/70 backdrop-blur-md relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-cyan-50 to-cyan-100 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 mt-5 md:mt-0">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -20,48 +19,56 @@ const CTASection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-                Ready to Transform Your
+              <h2 className="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
+                Manage Your Care
                 <br />
-                <span className="text-white">Fundraising Results?</span>
+                <span className="text-cyan-600">Your Way</span>
               </h2>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                See how you can use Henk to increase donations and build
-                stronger donor relationships
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                Access your medical records, schedule appointments, and communicate with your healthcare team through our secure patient portal
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-100 text-gray-900 font-semibold rounded-xl px-8 py-4 text-lg shadow-2xl hover:shadow-white/20 transform hover:scale-105 transition-all duration-300"
+                  className="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl px-8 py-4 text-lg shadow-lg hover:shadow-cyan-200 transform hover:scale-105 transition-all duration-300"
                   onClick={() =>
                     window.open(
-                      "https://calendly.com/jerome-callhenk/30min",
+                      "https://www.rch.org.au/",
                       "_blank"
                     )
                   }
                 >
-                  Book A Demo
+                  Access Patient Portal
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-white hover:bg-white/10 rounded-xl px-8 py-4 text-lg backdrop-blur-sm"
-                  onClick={() => setIsVideoModalOpen(true)}
+                  className="text-cyan-600 hover:bg-cyan-50 border-cyan-600 rounded-xl px-8 py-4 text-lg"
+                  onClick={() =>
+                    window.open(
+                      "https://www.rch.org.au/home/",
+                      "_blank"
+                    )
+                  }
                 >
-                  Watch Demo
+                  Learn More
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <div className="space-y-3 text-sm text-gray-700">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span>No setup fees</span>
+                  <Lock className="w-5 h-5 text-cyan-600" />
+                  <span>Secure and HIPAA compliant</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span>14-day free trial</span>
+                  <Clock className="w-5 h-5 text-cyan-600" />
+                  <span>24/7 access to your health information</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <User className="w-5 h-5 text-cyan-600" />
+                  <span>Direct messaging with your care team</span>
                 </div>
               </div>
             </motion.div>
@@ -72,13 +79,20 @@ const CTASection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/5 backdrop-blur">
-                <img
-                  src="/agent-v2.png"
-                  alt="Henk AI Agent Dashboard"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white border border-cyan-200">
+                <div className="aspect-video w-full bg-gradient-to-br from-cyan-100 to-cyan-50 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <User className="w-24 h-24 text-cyan-600 mx-auto opacity-40" />
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        Patient Portal
+                      </h3>
+                      <p className="text-gray-600 mt-2">
+                        Secure access to your health information
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

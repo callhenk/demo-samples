@@ -68,7 +68,7 @@ const ConversationalAgent = () => {
             className="relative w-14 h-14 bg-white hover:bg-gray-50 text-gray-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border border-gray-200"
           >
             <MessageCircle className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></span>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></span>
           </button>
         </motion.div>
       )}
@@ -86,8 +86,8 @@ const ConversationalAgent = () => {
             <elevenlabs-convai
               agent-id={agentId}
               variant="full"
-              avatar-orb-color-1="#4D9CFF"
-              avatar-orb-color-2="#9CE6E6"
+              avatar-orb-color-1="#008ccc"
+              avatar-orb-color-2="#fdb913"
               style={{
                 width: "100%",
                 height: "100%",

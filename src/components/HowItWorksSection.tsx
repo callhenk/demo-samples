@@ -61,7 +61,7 @@ const HowItWorksSection = () => {
                   <div className="w-16 h-16 bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-sm font-numeric font-bold text-white">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-sm font-numeric font-bold text-white">
                     {step.step}
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const HowItWorksSection = () => {
 
         <div className="text-center mt-16">
           <div className="inline-flex items-center space-x-2 bg-gray-100 px-6 py-3 rounded-full border border-gray-200 text-gray-700">
-            <Clock className="w-5 h-5 text-blue-500" />
+            <Clock className="w-5 h-5 text-cyan-500" />
             <span className="font-medium">
               Setup time: Less than 30 minutes
             </span>
