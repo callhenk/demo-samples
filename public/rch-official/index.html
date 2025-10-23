@@ -1353,39 +1353,7 @@ window.fcWidget.on("widget:closed", function(resp) {
         </div>
     </div>
     <!-- end foundation news carousel -->
-    <script type="text/javascript">
-        //Tracking codes for events on this page in the blogs.
-
-        function pagerEvent(a) {
-            try {
-                ga('rchTracker.send', 'event', 'InternetHomePage', 'click', 'NewsFeed pager click - ' + a);
-            }
-            catch (err) {
-                //Not on prod - no function defined
-            }
-        }
-
-        function blogClickEvent(a) {
-            try {
-                ga('rchTracker.send', 'event', 'InternetHomePage', 'click', 'NewsFeed click - ' + a);
-            }
-            catch (err) {
-                //Not on prod - no function defined
-            }
-        }
-
-        // Write in the onclick function hooks
-        $("#rch-news-carousel a").attr("onclick", "blogClickEvent('RCH News')");
-        $("#rch-news-carousel-xs a").attr("onclick", "blogClickEvent('RCH News')");
-        $("#fd-news-carousel a").attr("onclick", "blogClickEvent('Foundation News')");
-        $("a.jcarousel-control-prev").attr("onclick", "pagerEvent('RCH News')");
-        $("a.jcarousel-control-next").attr("onclick", "pagerEvent('RCH News')");
-        $("a.jcarousel-control-prev2").attr("onclick", "pagerEvent('Foundation News')");
-        $("a.jcarousel-control-next2").attr("onclick", "pagerEvent('Foundation News')");
-
-
-        
-    </script>
+    
 
  
 
@@ -1483,14 +1451,7 @@ window.fcWidget.on("widget:closed", function(resp) {
                     </div>
                     <span class="breadcrumb hidden-xs">
                         
-                        <span id="ctl00_ctl00_rchFolderBreadCrumb"><a target="_self" href="www.rch.org.html" title="The Royal Children&amp;#39;s Hospital">RCH</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;The Royal Children's Hospital<script id="EktronScriptBlockaeoye" type="text/javascript">
-
-Ektron.ready(function(event, eventName){
-document.cookie ='ek_TimezoneOffset=' + new Date().getTimezoneOffset();
-});
-
-
-</script></span>
+                        <span id="ctl00_ctl00_rchFolderBreadCrumb"><a target="_self" href="www.rch.org.html" title="The Royal Children&amp;#39;s Hospital">RCH</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;The Royal Children's Hospital</span>
                     </span>
                 </div>
             </div>

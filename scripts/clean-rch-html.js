@@ -71,6 +71,16 @@ function cleanRCHHTML() {
     removedCount += jsScripts.length;
     jsScripts.remove();
 
+    // Remove ALL inline scripts (they depend on jQuery/Ektron which aren't available)
+    $('script:not([src])').each((i, el) => {
+      const content = $(el).html();
+      // Keep only scripts that don't use jQuery ($) or Ektron
+      if (content && (content.includes('$(') || content.includes('Ektron.') || content.includes('Ektron['))) {
+        $(el).remove();
+        removedCount++;
+      }
+    });
+
     // Write the cleaned HTML back
     const cleanedHtml = $.html();
     fs.writeFileSync(RCH_HTML_PATH, cleanedHtml, 'utf8');
