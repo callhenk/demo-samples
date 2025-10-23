@@ -62,6 +62,14 @@ function cleanRCHHTML() {
       }
     });
 
+    // Remove all script tags that reference local js files (they're not loading properly in iframe)
+    $('script[src*="js/"]').remove();
+    removedCount += $('script[src*="js/"]').length;
+
+    // Remove manifest.json reference (causing error)
+    $('link[href*="manifest.json"]').remove();
+    removedCount += 1;
+
     // Write the cleaned HTML back
     const cleanedHtml = $.html();
     fs.writeFileSync(RCH_HTML_PATH, cleanedHtml, 'utf8');
