@@ -15,7 +15,11 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/rch-official",
+      "destination": "/rch-official/index.html"
+    },
+    {
+      "source": "/((?!rch-official).*)",
       "destination": "/index.html"
     }
   ]
